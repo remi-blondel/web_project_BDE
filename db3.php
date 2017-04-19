@@ -119,9 +119,9 @@ if (preg_match("/.*@viacesi\.fr/", $email1) OR preg_match("/.*@cesi\.fr/", $emai
 
 								while ($donnees = $reponse->fetch())
 								{
-									echo $donnees['pk_id_user'] . '<br />';
+									
 									$nextid=$donnees['pk_id_user']+1;
-									echo $nextid;
+									
 								}
 
 								$reponse->closeCursor();
