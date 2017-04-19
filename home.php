@@ -93,7 +93,7 @@ $homeData = new homeData();
                                         </p>
                                     </div>
                                     <div class="col-xs-4 col-lg-4">
-                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Subscribe</button>
+                                        <a href="" type="button" class="btn btn-primary"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Subscribe</a>
                                     </div>
                                 </div>
                                 <div class="row">
