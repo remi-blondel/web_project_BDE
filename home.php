@@ -199,52 +199,56 @@ $homeData = new homeData();
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
-                        <div class="col-md-6">
-                            <div class="form-group"><BR>
-                                <label for="activitytitle">Activity Title</label>
-                                <input type="text" class="form-control" id="activitytitle" placeholder="Enter title here...">
+                        <form method="post" action="model/suggestionForm.php">
+                            <div class="col-md-6">
+                                <div class="form-group"><BR>
+                                    <label for="activitytitle">Activity Title</label>
+                                    <input name="activity_title" type="text" class="form-control" id="activitytitle" placeholder="Enter title here...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="activitydescription">Describe your activity</label>
+                                    <textarea name="description" class="form-control" id="activitydescription" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="location">Location</label>
+                                    <input name="location" type="text" class="form-control" id="location" placeholder="Enter location...">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="activitydescription">Describe your activity</label>
-                                <textarea class="form-control" id="activitydescription" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="location">Location</label>
-                                <input type="text" class="form-control" id="location" placeholder="Enter location...">
-                            </div>
-                        </div>
-                        <div class="col-md-3"><BR>
+                            <div class="col-md-3"><BR>
 
-                            <label class="control-label" for="date1">Date 1</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                <input class="form-control" id="date1" name="suggestiondate" placeholder="DD/MM/YYYY" type="text"/>
-                            </div>
+                                <label class="control-label" for="date1">Date 1</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input name="date1" class="form-control" id="date1" placeholder="YYYY-MM-DD" type="text"/>
+                                </div>
 
-                            <label class="control-label" for="date2">Date 2</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                <input class="form-control" id="date2" name="suggestiondate" placeholder="DD/MM/YYYY" type="text"/>
-                            </div>
+                                <label class="control-label" for="date2">Date 2</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input name="date2" class="form-control" id="date2" placeholder="YYYY-MM-DD" type="text"/>
+                                </div>
 
-                            <label class="control-label" for="date3">Date 3</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                <input class="form-control" id="date3" name="suggestiondate" placeholder="DD/MM/YYYY" type="text"/>
+                                <label class="control-label" for="date3">Date 3</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input name="date3" class="form-control" id="date3" placeholder="YYYY-MM-DD" type="text"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3"><BR>
-                            <label for="time1" class="col-2 col-form-label">Time 1</label>
-                            <input class="form-control" type="time" id="time1">
-                            <label for="time2" class="col-2 col-form-label">Time 2</label>
-                            <input class="form-control" type="time" id="time2">
-                            <label for="time3" class="col-2 col-form-label">Time 3</label>
-                            <input class="form-control" type="time" id="time3">
-                        </div>
-                        <div class="col-md-6"><BR><BR>
-                            <button id="btnformactivity" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
-                        </div>
+                            <div class="col-md-3"><BR>
+                                <label for="time1" class="col-2 col-form-label">Time 1</label>
+                                <input name="time1" class="form-control" type="time" id="time1">
+                                <label for="time2" class="col-2 col-form-label">Time 2</label>
+                                <input name="time2" class="form-control" type="time" id="time2">
+                                <label for="time3" class="col-2 col-form-label">Time 3</label>
+                                <input name="time3" class="form-control" type="time" id="time3">
+                            </div>
+                            <div class="col-md-6"><BR><BR>
+                                <input id="btnformactivity" class="btn btn-success" type="submit" value="Submit"/>
+                            </div>
+                        </form>
+
                     </div>
+
                     <div role="tabpanel" class="tab-pane" id="profile">
                         <div class="form-group"><BR>
                             <label for="subject">Subject</label>
