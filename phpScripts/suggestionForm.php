@@ -18,11 +18,11 @@ $datetime1 = $date1 . " " . $time1 . ":00";
 $datetime2 = $date2 . " " . $time2 . ":00";
 $datetime3 = $date3 . " " . $time3 . ":00";
 
-//var_dump($activityTitle, $location, $description, $datetime1, $datetime2, $datetime3, $user);
+var_dump($activityTitle, $location, $description, $datetime1, $datetime2, $datetime3, $user);
 
 $addSuggestionQuery = singleton::getInstance()->prepare("INSERT INTO suggestion (name, place, content, state, datetime1, datetime2, datetime3, pk_id_user)
-                                                        VALUES ('activity', 'arras', 'description', 'pending', '2017-04-04 10:30:00', '2017-04-04 10:30:00', '2017-04-04 10:30:00', '1')");
-                                                        //VALUES ('$activityTitle', '$location', '$description', 'pending', '$datetime1', '$datetime2', '$datetime3', '$user')");
+                                                        VALUES ('$activityTitle', '$location', '$description', 'pending', '$datetime1', '$datetime2', '$datetime3', '$user')");
+
 $addSuggestionQuery->execute();
 
-//header('location: ../home.php#suggestions');
+header('location: ../home.php#suggestions');

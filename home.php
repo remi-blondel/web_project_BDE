@@ -199,7 +199,7 @@ $homeData = new homeData();
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
-                        <form method="post" action="model/suggestionForm.php">
+                        <form method="post" action="phpScripts/suggestionForm.php">
                             <div class="col-md-6">
                                 <div class="form-group"><BR>
                                     <label for="activitytitle">Activity Title</label>

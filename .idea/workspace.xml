@@ -18,23 +18,22 @@
       <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="344">
+              <caret line="138" column="38" lean-forward="true" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="suggestionForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/suggestionForm.php">
+        <entry file="file://$PROJECT_DIR$/phpScripts/suggestionForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
-                <marker date="1492605660317" expanded="true" signature="676:828" ph="INSERT INTO suggestion... " />
-                <marker date="1492605660317" expanded="true" signature="676:958" ph="INSERT INTO suggestion... " />
-                <marker date="1492605660317" expanded="true" signature="676:1072" ph="INSERT INTO suggestion... " />
-                <marker date="1492605660317" expanded="true" signature="676:1136" ph="INSERT INTO suggestion... " />
+                <marker date="1492607700855" expanded="true" signature="674:944" ph="INSERT INTO suggestion... " />
+                <marker date="1492607700855" expanded="true" signature="674:947" ph="INSERT INTO suggestion... " />
+                <marker date="1492607700855" expanded="true" signature="674:948" ph="INSERT INTO suggestion... " />
               </folding>
             </state>
           </provider>
@@ -91,6 +90,7 @@
     <findStrings>
       <find>sugges</find>
       <find>vote</find>
+      <find>model</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,11 +99,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts.js" />
-        <option value="$PROJECT_DIR$/model/suggestionForm.php" />
         <option value="$PROJECT_DIR$/model/bdeData.php" />
         <option value="$PROJECT_DIR$/bde.php" />
         <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/scripts.js" />
+        <option value="$PROJECT_DIR$/model/suggestionForm.php" />
       </list>
     </option>
   </component>
@@ -186,6 +186,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Logiciels\wamp64\www\web_project_BDE\phpScripts" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
@@ -248,12 +253,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492590563141</updated>
-      <workItem from="1492590566460" duration="13213000" />
+      <workItem from="1492590566460" duration="15249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13213000" />
+    <option name="totallyTimeSpent" value="15249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -351,27 +356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/suggestionForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <marker date="1492605660317" expanded="true" signature="676:828" ph="INSERT INTO suggestion... " />
-            <marker date="1492605660317" expanded="true" signature="676:958" ph="INSERT INTO suggestion... " />
-            <marker date="1492605660317" expanded="true" signature="676:1072" ph="INSERT INTO suggestion... " />
-            <marker date="1492605660317" expanded="true" signature="676:1136" ph="INSERT INTO suggestion... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/homeData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -411,10 +395,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpScripts/suggestionForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <marker date="1492607700855" expanded="true" signature="674:944" ph="INSERT INTO suggestion... " />
+            <marker date="1492607700855" expanded="true" signature="674:947" ph="INSERT INTO suggestion... " />
+            <marker date="1492607700855" expanded="true" signature="674:948" ph="INSERT INTO suggestion... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        <state relative-caret-position="344">
+          <caret line="138" column="38" lean-forward="true" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
           <folding />
         </state>
       </provider>
