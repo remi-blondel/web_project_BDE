@@ -44,7 +44,7 @@
 
 				<div class="col-md-4"></div>
 
-				<form class="col-md-4" method="POST" action="db3.php">
+				<form class="col-md-4" method="POST" action="db3.php" enctype="multipart/form-data">
 
 				   <fieldset>
 
@@ -62,7 +62,7 @@
 
 				   	  	<label for="email">Email addr:</label>
 				   	  	<input type="email" name="email" id="email" size="40" required/>
-				   	  	</br>
+				   	  	<br/>
 
 						<label for="pass2">Password :</label>
 				   	  	<input type="password" name="pass2" id="pass2" size="40" required/>
@@ -71,7 +71,9 @@
 						<label for="pass3">Password :</label>
 				   	  	<input type="password" name="pass3" id="pass3" size="40" required/>
 				   	  	</br>
-						</br>
+
+						<input type="file" name="monfichier" />
+						<br />
 
 				   	  	<input type="image" src="PicturesNicolas/submit.png" height="35" width="90"/>
 			   	  

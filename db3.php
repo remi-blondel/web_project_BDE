@@ -42,6 +42,37 @@ else
 
 
 
+if(isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
+
+{
+
+
+   $infosfichier = pathinfo($_FILES['monfichier']['name']);
+                $extension_upload = $infosfichier['extension'];
+                $extensions_autorisees = array('jpg', 'jpeg', 'png');
+
+                if (in_array($extension_upload, $extensions_autorisees))
+
+                {
+                
+                }
+
+
+
+}
+
+
+
+else
+
+
+{
+
+	echo 'Une erreur s\'est produite. Veuillez renvoyer l\'image';
+
+}
+
+
 
 if (preg_match("/.*@viacesi\.fr/", $email1) OR preg_match("/.*@cesi\.fr/", $email1))  
 
