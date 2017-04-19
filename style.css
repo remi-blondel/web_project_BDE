@@ -1,0 +1,201 @@
+.navbar-fixed-top
+{
+    padding: 1%;
+    margin-bottom: auto;
+    text-decoration-color: white;
+    font-weight: bold;
+}
+.navbar-nav
+{
+    height: 50px;
+}
+
+body
+{
+    padding-top: 75px;
+    font-family: "Trebuchet MS";
+    background-color: darkred;
+}
+
+header
+{
+    text-align: center;
+    font-weight: bold;
+    font-family: "Trebuchet MS";
+}
+.containerlevel1
+{
+    background-color: white;
+    padding: 2%;
+    margin: 3%;
+    box-shadow: 0.2em 0.2em #CCC
+}
+
+.shopcontainer
+{
+    margin-left: 10px;
+    margin-right: -10px;
+    min-height: 100vh;
+    background-color: white;
+    padding: 2%;
+    box-shadow: 0.2em 0.2em #CCC
+}
+@media (max-width: 991px)
+{
+    .shopcontainer
+    {
+        min-height: auto;
+    }
+}
+
+.panel-heading
+{
+    background-color: #2e6da4;
+}
+
+.img-responsive
+{
+    height: 3em;
+}
+
+.img-center
+{
+    display: block;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.paddingr10
+{
+    padding-right: 10px;
+}
+.paddingb10
+{
+    padding-bottom: 20px;
+}
+
+.auto-resize
+{
+    margin: auto;
+    height: auto;
+}
+
+/*Code permettant de créer
+des colonnes de même hauteur
+.equal
+{
+    display: flex;
+    display: -webkit-flex;
+}*/
+.vertical-align
+{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.containerlevel1 .row h2
+ {
+     font-size: 50px;
+     font-weight: bolder;
+     text-align: center;
+ }
+
+.title
+{
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+}
+.white
+{
+    color: whitesmoke;
+}
+
+.text18
+{
+    font-size: 18px;
+}
+.text22
+{
+    font-size: 22px;
+}
+
+.justified
+{
+    text-align: justify;
+}
+
+.singlenews
+{
+    padding-bottom: 10px;
+}
+
+.carousel
+{
+    margin: 10px;
+}
+
+.carousel-inner > .item > img
+{
+    width: auto;
+    height: auto;
+}
+
+.up_button, .up_votes
+{
+    margin-left: 10px;
+}
+
+.carouselbtn
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10px;
+    margin-left: 37%;
+}
+
+#btnformactivity
+{
+    float: right;
+}
+
+@media (max-width: 850px)
+{
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
