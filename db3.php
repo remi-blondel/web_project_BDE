@@ -12,6 +12,37 @@ $email1=$_POST['email'];
 $password1=sha1($_POST['pass2']);
 $password2=sha1($_POST['pass3']);
 
+
+if (preg_match("/.*@viacesi\.fr/", $email1)) 
+
+{
+
+$role="none";
+
+}
+
+
+
+elseif(preg_match("/.*@cesi\.fr/", $email1))  
+
+{
+
+$role="staff";
+
+}
+
+else
+
+
+{
+
+	$role= NULL;
+}
+
+
+
+
+
 if (preg_match("/.*@viacesi\.fr/", $email1) OR preg_match("/.*@cesi\.fr/", $email1))  
 
 
