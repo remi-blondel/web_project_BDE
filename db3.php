@@ -3,7 +3,7 @@
 require_once 'database/singleton.php';
 require_once 'database/config.php';
 
-header("Refresh: 3; url=Login.html");
+header("Refresh: 5; url=Login.html");
 
 
 $firstname1=$_POST['firstname'];
@@ -40,7 +40,7 @@ else
 }
 
 
-
+/*
 
 if(isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
 
@@ -85,6 +85,9 @@ else
 }
 
 
+*/
+
+
 
 if (preg_match("/.*@viacesi\.fr/", $email1) OR preg_match("/.*@cesi\.fr/", $email1))  
 
@@ -96,19 +99,85 @@ if (preg_match("/.*@viacesi\.fr/", $email1) OR preg_match("/.*@cesi\.fr/", $emai
 
 		{
 
-		$req = singleton::getInstance()->prepare('INSERT INTO user(firstname, lastname, pass, email, role) VALUES(:prenom, :nom, :mot_de_passe, :email, :role)');
-		
-		$req->execute(array(
-		
-		'prenom' => $firstname1,
-		'nom' => $lastname1,
-		'mot_de_passe' => $password1,
-		'email' => $email1,
-		'role' => $role
-		
-		));
 
-		echo 'Les informations que vous avez rentré sont corretes et sont enregistrées! Redirection vers la page de connexion...';
+			if(isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
+
+			{
+
+
+			   $infosfichier = pathinfo($_FILES['monfichier']['name']);
+			                $extension_upload = $infosfichier['extension'];
+			                $extensions_autorisees = array('jpg', 'jpeg', 'png');
+
+
+			                if (in_array($extension_upload, $extensions_autorisees))
+
+			                {
+
+
+			                	$reponse = singleton::getInstance()->query('SELECT pk_id_user FROM user ORDER BY pk_id_user DESC LIMIT 1');
+
+								while ($donnees = $reponse->fetch())
+								{
+									echo $donnees['pk_id_user'] . '<br />';
+									$nextid=$donnees['pk_id_user']+1;
+									echo $nextid;
+								}
+
+								$reponse->closeCursor();
+			                	
+
+			                	$newname='user_'. $nextid . '.' . $extension_upload;
+
+			                    move_uploaded_file($_FILES['monfichier']['tmp_name'], 'Avatarpics/' . $newname);
+			                    
+
+			                    $req = singleton::getInstance()->prepare('INSERT INTO user(firstname, lastname, pass, email, role, user_img) VALUES(:prenom, :nom, :mot_de_passe, :email, :role, :imagename)');
+		
+								$req->execute(array(
+								
+								'prenom' => $firstname1,
+								'nom' => $lastname1,
+								'mot_de_passe' => $password1,
+								'email' => $email1,
+								'role' => $role,
+								'imagename' => $newname
+								
+								));
+
+								echo 'Les informations que vous avez rentré sont corretes et sont enregistrées! Redirection vers la page de connexion...';
+
+
+
+
+			                }
+
+			                else
+
+
+			                {
+
+			                	echo "L'extention du fichier n'est pas valide. Merci d'uploader un fichier .jpg .jpeg ou .png. Redirection vers la page de connexion...";
+
+			                }
+
+
+
+			}
+
+
+
+			else
+
+
+			{
+
+				echo 'Une erreur s\'est produite. Veuillez reupload l\'image. Redirection vers la page de connexion...';
+
+			}
+
+
+
 
 
 		}
