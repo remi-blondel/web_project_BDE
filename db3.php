@@ -55,6 +55,18 @@ if(isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
 
                 {
                 
+                    move_uploaded_file($_FILES['monfichier']['tmp_name'], 'Avatarpics/' . basename($_FILES['monfichier']['name']));
+                    echo "L'envoi a bien été effectué !";
+
+                }
+
+                else
+
+
+                {
+
+                	echo "L'extention du fichier n'est pas valide. Merci d'uploader un fichier .jpg .jpef ou .png";
+
                 }
 
 
@@ -68,7 +80,7 @@ else
 
 {
 
-	echo 'Une erreur s\'est produite. Veuillez renvoyer l\'image';
+	echo 'Une erreur s\'est produite. Veuillez reupload l\'image';
 
 }
 
