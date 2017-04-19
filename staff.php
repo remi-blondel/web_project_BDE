@@ -13,8 +13,8 @@
 
 <?php
 
-require_once 'database/database.php';
-require_once 'database/db_config.php';
+require_once 'database/singleton.php';
+require_once 'database/config.php';
 
 /**
  * Inclusion de la navbar complète
@@ -37,9 +37,9 @@ function getAllPictures()
         /**
          * Requête SQL pour retrive toutes les images du site en base
          */
-        $stmt = database::getInstance()->prepare(<<<SQL
+        $stmt = singleton::getInstance()->prepare(<<<SQL
             SELECT path
-            FROM Picture
+            FROM picture
 SQL
         );
 
@@ -92,9 +92,9 @@ function viewShop()
          /**
          * Requête SQL pour récupérer les données du store en base
          */
-         $stmt = database::getInstance()->prepare(<<<SQL
+         $stmt = singleton::getInstance()->prepare(<<<SQL
          SELECT pk_id_product, name, price, cat, img_path
-         FROM Product
+         FROM product
 SQL
          );
 
@@ -149,10 +149,10 @@ function viewOrders()
 {
     try
     {
-        $stmt = database::getInstance()->prepare(<<<SQL
-        SELECT * FROM User 
-        INNER JOIN User_Buy ON User_Buy.id_user = User.pk_id_user
-        INNER JOIN Product ON Product.pk_id_product = User_Buy.id_product
+        $stmt = singleton::getInstance()->prepare(<<<SQL
+        SELECT * FROM user 
+        INNER JOIN user_buy ON user_buy.pk_id_user = user.pk_id_user
+        INNER JOIN product ON product.pk_id_product = user_buy.pk_id_product
         WHERE paid = 'NO';
 SQL
         );
@@ -220,9 +220,9 @@ function viewRoles()
     /**
     * Requête SQL pour récupérer les données de l'utilisateur en base
     */
-    $stmt = database::getInstance()->prepare(<<<SQL
+    $stmt = singleton::getInstance()->prepare(<<<SQL
     SELECT pk_id_user, firstname, lastname, role
-    FROM User
+    FROM user
 SQL
     );
 
