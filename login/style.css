@@ -1,0 +1,213 @@
+header
+{
+
+	background-color: #ad141d;
+	height: 30px;
+
+}
+
+
+footer
+{
+
+	background-color: #C0C0C0;
+	height: 20px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px; 
+	right: 0px;
+	
+}
+
+
+html
+
+{
+
+	height: 100%;
+}
+
+body
+{
+
+background-color: #efefef;
+position:relative;
+min-height: 100%;
+/*margin: 0;
+padding: 0;*/
+
+}
+
+
+.col-md-4
+{
+
+	/*background-color: grey;*/
+    text-align: center;
+
+}
+
+
+.col-md-8
+{
+
+	/*background-color: blue;*/
+    text-align: center;
+
+}
+
+
+.liens
+{
+
+	text-align: right;
+
+}
+
+
+#titre
+{
+
+	margin-top:70px;
+	margin-bottom: 50px;
+
+}
+
+
+#titre2
+{
+
+	margin-top:30px;
+	margin-bottom: 30px;
+
+}
+
+
+#titre3
+{
+
+	margin-top:70px;
+	margin-bottom: 70px;
+
+}
+
+
+#titre4
+{
+
+	margin-top:70px;
+	margin-bottom: 70px;
+
+}
+
+
+#titre5
+{
+
+	margin-top:20px;
+	margin-bottom: 40px;
+
+}
+
+
+.bordertitle
+{
+
+border: 4px black solid ;
+padding-top: 20px;
+padding-bottom: 20px;
+
+}
+
+
+#formulaire
+{
+
+/*background-color: blue;*/
+margin-top:10px;
+margin-bottom: 20px;
+
+}
+
+
+#options
+{
+
+margin-top: 0px;
+margin-bottom:0px;
+
+}
+
+
+#formulaire2
+{
+
+/*background-color: grey;*/
+margin-top:10px;
+margin-bottom: 35px;
+
+}
+
+
+#formulaire3
+{
+
+/*background-color: grey;*/
+margin-top:10px;
+margin-bottom: 90px;
+
+}
+
+
+#formulaire4
+{
+
+/*background-color: grey;*/
+margin-top:10px;
+margin-bottom: 90px;
+
+}
+
+
+#note
+{
+
+margin-bottom: 30px;
+
+}
+
+
+#logo5
+{
+
+margin-top: 30px;
+margin-bottom: 25px;
+
+}
+
+
+#logo
+{
+
+margin-top: 50px;
+
+
+}
+
+
+h2
+{
+
+color: #ad141d;
+
+}
+
+
+.mentionslegales
+{
+
+background-color: white;
+
+}
+
+
