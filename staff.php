@@ -59,7 +59,7 @@ HTML;
         {
             $allpictures .= "<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\" >";
             $allpictures .= "<div class=\"thumbnail text-center\">";
-            $allpictures .= "<img src = \"{$pictures['path']}\" class=\"img-responsive img-center auto-resize\" alt = \"icon\" >";
+            $allpictures .= "<img src = \"{$pictures['path']}\" class=\"img-responsive img-center auto-resize\" alt = \"icon\">";
             $allpictures .= "<a class='btn btn-primary text-center' role='button' href=management/manage_pictures.php?action=dlpics><i class='fa fa-cloud-download' aria-hidden = 'true' ></i ></a>";
             $allpictures .= "<a class='btn btn-danger' role='button' href=management/manage_pictures.php><i class='fa fa-trash' aria-hidden = 'true' ></i ></a>";
             $allpictures .= "</div>";
