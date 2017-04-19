@@ -29,7 +29,7 @@ $homeData = new homeData();
             <div class="row vertical-align panel-body">
                 <?php foreach ($homeData->getNews() as $new):?>
                     <div class="col-xs-12 col-sm-3 col-lg-2">
-                        <img src="<?=$new->img_path;?>" class="img-thumbnail img-responsive img-center auto-resize" alt="icon">
+                        <img src="pictures/<?=$new->img_path;?>" class="img-thumbnail img-responsive img-center auto-resize" alt="icon">
                     </div>
                     <div class="col-xs-12 col-sm-9 col-lg-4 singlenews">
                         <h4 class="text22">

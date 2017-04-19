@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="142" column="93" lean-forward="false" selection-start-line="142" selection-start-column="89" selection-end-line="142" selection-end-column="93" />
+            <state relative-caret-position="504">
+              <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -31,10 +31,10 @@
             <state relative-caret-position="468">
               <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
-                <marker date="1492600564437" expanded="true" signature="676:828" ph="INSERT INTO suggestion... " />
-                <marker date="1492600564437" expanded="true" signature="676:958" ph="INSERT INTO suggestion... " />
-                <marker date="1492600564437" expanded="true" signature="676:1072" ph="INSERT INTO suggestion... " />
-                <marker date="1492600564437" expanded="true" signature="676:1136" ph="INSERT INTO suggestion... " />
+                <marker date="1492605660317" expanded="true" signature="676:828" ph="INSERT INTO suggestion... " />
+                <marker date="1492605660317" expanded="true" signature="676:958" ph="INSERT INTO suggestion... " />
+                <marker date="1492605660317" expanded="true" signature="676:1072" ph="INSERT INTO suggestion... " />
+                <marker date="1492605660317" expanded="true" signature="676:1136" ph="INSERT INTO suggestion... " />
               </folding>
             </state>
           </provider>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bde.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bde.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bde.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1476">
-              <caret line="82" column="34" lean-forward="true" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+              <caret line="82" column="34" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -75,11 +75,11 @@
             <state relative-caret-position="486">
               <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
               <folding>
-                <marker date="1492604353941" expanded="true" signature="240:258" ph="SELECT * FRO... news" />
-                <marker date="1492604353941" expanded="true" signature="417:535" ph="SELECT * FRO... suggestion" />
-                <marker date="1492604353941" expanded="true" signature="2033:2104" ph="SELECT COUNT... user_vote" />
-                <marker date="1492604353941" expanded="true" signature="2402:2473" ph="SELECT COUNT... user_vote" />
-                <marker date="1492604353941" expanded="true" signature="2771:2842" ph="SELECT COUNT... user_vote" />
+                <marker date="1492605660300" expanded="true" signature="240:258" ph="SELECT * FRO... news" />
+                <marker date="1492605660300" expanded="true" signature="417:535" ph="SELECT * FRO... suggestion" />
+                <marker date="1492605660300" expanded="true" signature="2033:2104" ph="SELECT COUNT... user_vote" />
+                <marker date="1492605660300" expanded="true" signature="2402:2473" ph="SELECT COUNT... user_vote" />
+                <marker date="1492605660300" expanded="true" signature="2771:2842" ph="SELECT COUNT... user_vote" />
               </folding>
             </state>
           </provider>
@@ -99,11 +99,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/scripts.js" />
         <option value="$PROJECT_DIR$/model/suggestionForm.php" />
-        <option value="$PROJECT_DIR$/bde.php" />
         <option value="$PROJECT_DIR$/model/bdeData.php" />
+        <option value="$PROJECT_DIR$/bde.php" />
+        <option value="$PROJECT_DIR$/home.php" />
       </list>
     </option>
   </component>
@@ -248,12 +248,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492590563141</updated>
-      <workItem from="1492590566460" duration="13023000" />
+      <workItem from="1492590566460" duration="13213000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13023000" />
+    <option name="totallyTimeSpent" value="13213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -364,10 +364,10 @@
         <state relative-caret-position="468">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1492600564437" expanded="true" signature="676:828" ph="INSERT INTO suggestion... " />
-            <marker date="1492600564437" expanded="true" signature="676:958" ph="INSERT INTO suggestion... " />
-            <marker date="1492600564437" expanded="true" signature="676:1072" ph="INSERT INTO suggestion... " />
-            <marker date="1492600564437" expanded="true" signature="676:1136" ph="INSERT INTO suggestion... " />
+            <marker date="1492605660317" expanded="true" signature="676:828" ph="INSERT INTO suggestion... " />
+            <marker date="1492605660317" expanded="true" signature="676:958" ph="INSERT INTO suggestion... " />
+            <marker date="1492605660317" expanded="true" signature="676:1072" ph="INSERT INTO suggestion... " />
+            <marker date="1492605660317" expanded="true" signature="676:1136" ph="INSERT INTO suggestion... " />
           </folding>
         </state>
       </provider>
@@ -389,24 +389,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="142" column="93" lean-forward="false" selection-start-line="142" selection-start-column="89" selection-end-line="142" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/bdeData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
           <folding>
-            <marker date="1492604353941" expanded="true" signature="240:258" ph="SELECT * FRO... news" />
-            <marker date="1492604353941" expanded="true" signature="417:535" ph="SELECT * FRO... suggestion" />
-            <marker date="1492604353941" expanded="true" signature="2033:2104" ph="SELECT COUNT... user_vote" />
-            <marker date="1492604353941" expanded="true" signature="2402:2473" ph="SELECT COUNT... user_vote" />
-            <marker date="1492604353941" expanded="true" signature="2771:2842" ph="SELECT COUNT... user_vote" />
+            <marker date="1492605660300" expanded="true" signature="240:258" ph="SELECT * FRO... news" />
+            <marker date="1492605660300" expanded="true" signature="417:535" ph="SELECT * FRO... suggestion" />
+            <marker date="1492605660300" expanded="true" signature="2033:2104" ph="SELECT COUNT... user_vote" />
+            <marker date="1492605660300" expanded="true" signature="2402:2473" ph="SELECT COUNT... user_vote" />
+            <marker date="1492605660300" expanded="true" signature="2771:2842" ph="SELECT COUNT... user_vote" />
           </folding>
         </state>
       </provider>
@@ -414,7 +406,15 @@
     <entry file="file://$PROJECT_DIR$/bde.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1476">
-          <caret line="82" column="34" lean-forward="true" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+          <caret line="82" column="34" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding />
         </state>
       </provider>
