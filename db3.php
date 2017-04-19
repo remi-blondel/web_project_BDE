@@ -1,18 +1,7 @@
 <?php
 
-try
-{
-
-	$bdd = new PDO('mysql:host=localhost;dbname=Projetweb','root','root');
-
-}
-
-
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}
-
+require_once 'database/singleton.php';
+require_once 'database/config.php';
 
 header("Refresh: 3; url=Login.html");
 
@@ -20,8 +9,8 @@ header("Refresh: 3; url=Login.html");
 $firstname1=$_POST['firstname'];
 $lastname1=$_POST['lastname'];
 $email1=$_POST['email'];
-$password1=$_POST['pass2'];
-$password2=$_POST['pass3'];
+$password1=sha1($_POST['pass2']);
+$password2=sha1($_POST['pass3']);
 
 if (preg_match("/.*@viacesi\.fr/", $email1) OR preg_match("/.*@cesi\.fr/", $email1))  
 
@@ -33,14 +22,16 @@ if (preg_match("/.*@viacesi\.fr/", $email1) OR preg_match("/.*@cesi\.fr/", $emai
 
 		{
 
-
-		$req = $bdd->prepare('INSERT INTO Membres_du_site(Prénom, Nom, Email, Mot_de_Passe) VALUES(:prenom, :nom, :email, :mot_de_passe)');
+		$req = singleton::getInstance()->prepare('INSERT INTO user(firstname, lastname, pass, email, role) VALUES(:prenom, :nom, :mot_de_passe, :email, :role)');
+		
 		$req->execute(array(
 		
 		'prenom' => $firstname1,
 		'nom' => $lastname1,
+		'mot_de_passe' => $password1,
 		'email' => $email1,
-		'mot_de_passe' => $password1
+		'role' => $role
+		
 		));
 
 		echo 'Les informations que vous avez rentré sont corretes et sont enregistrées! Redirection vers la page de connexion...';
