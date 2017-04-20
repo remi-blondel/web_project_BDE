@@ -38,7 +38,11 @@ function getAllPictures()
          * Requête SQL pour retrive toutes les images du site en base
          */
         $stmt = singleton::getInstance()->prepare(<<<SQL
+<<<<<<< HEAD
             SELECT *
+=======
+            SELECT path
+>>>>>>> origin/master
             FROM picture
 SQL
         );
@@ -153,7 +157,11 @@ function viewOrders()
         SELECT * FROM user 
         INNER JOIN user_buy ON user_buy.pk_id_user = user.pk_id_user
         INNER JOIN product ON product.pk_id_product = user_buy.pk_id_product
+<<<<<<< HEAD
         ORDER BY lastname 
+=======
+        WHERE paid = 'NO';
+>>>>>>> origin/master
 SQL
         );
 
