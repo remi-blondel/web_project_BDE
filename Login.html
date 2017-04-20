@@ -48,10 +48,10 @@
 						   <legend>Sign in</legend> 
 
 					   	  	<label for="email1"> Email addr :</label>
-					   	  	<input type="text" name="email1" id="email1" size="35"/>
+					   	  	<input type="text" name="email1" id="email1" size="35" required/>
 					   		</br>
 					   	  	<label for="pass">Password :</label>
-					   	  	<input type="password" name="pass" id="pass" size="35"/>
+					   	  	<input type="password" name="pass" id="pass" size="35" required/>
 					   	  	</br>
 					   	  	</br>
 
@@ -69,6 +69,15 @@
 				<div class="col-md-4"></div>
 
 				<p class="col-md-4">
+
+					<!--<?php
+
+					if (isset($erreur))
+					{
+					echo $erreur;
+					}
+
+					?>-->
 		   			<a href="Inscription.html" >Not registered yet</a>&emsp;
 		   			<a href="passwordforgotten.html" >Forgot password ?</a>
 		   		</p>

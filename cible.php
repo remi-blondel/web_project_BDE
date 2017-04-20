@@ -19,12 +19,14 @@ $req->execute(array(
 
 $resultat = $req->fetch();
 
-echo $resultat['pk_id_user'] . '<br />';
+
 
 if (!$resultat)
 {
 
 echo 'Mauvais identifiant ou mot de passe !';
+
+
 
 }
 
@@ -34,9 +36,11 @@ else
 
 session_start();
     $_SESSION['pk_id_user'] = $resultat['pk_id_user'];
-    $_SESSION['email1'] = $email3;
-    echo 'Vous êtes connecté !';
+    $_SESSION['email3'] = $email3;
+    echo 'Connexion en cours, redirection vers la page d\'accueil !';
 
 }
+
+//closecursor?
 
 ?>
