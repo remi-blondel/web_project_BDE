@@ -92,10 +92,7 @@ $shopData = new shopData();
                             <div class="caption">
                                 <div class="row">
                                     <div class="col-xs-4 col-lg-4 text-center"><span class="text22"><?=$product->price; ?> €</span></div>
-                                    <div class="col-xs-8 col-lg-8 text-center">
-                                        <a class="btn btn-success fa fa-cart-plus" role="button" href="phpScripts/purchase.php?action=buy&prod=<?= $product->pk_id_product ?>&user=<?= $_SESSION['user_id']?>"> Add to cart</a>
-
-                                    </div>
+                                    <div class="col-xs-8 col-lg-8 text-center"><button class="btn btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button></div>
                                 </div>
                             </div>
                         </div>

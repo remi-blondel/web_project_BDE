@@ -12,14 +12,18 @@
 </head>
 
 <body>
+
+<header>
+    <?php include_once("../navbar.php") ?>
+</header>
+
 <div id="allcontent">
     <div class="container-fluid containerlevel1">
         <div class="row">
             <h2>Add Product</h2>
         </div>
         <div class="row">
-            <form action="manage_shop.php" method="POST">
-
+            <form action="manage_shop.php" method="POST" enctype="multipart/form-data">
                 <div class="col-md-8">
                     <div class="form-group"><BR>
                         <label for="productitle">Product Title</label>
@@ -38,14 +42,11 @@
                     </div>
                 </div>
                 <div class="col-md-4"><BR>
+                    <input type="hidden" name="action" value="addprod">
                     <label for="pictureinput">Select a Picture for your product</label>
-                    <input type="file" id="pictureinput"><BR>
-
-                    <input type="hidden" name="action" value="addprod"/> <!--Action à réaliser -->
-
-                    <button class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
+                    <input type="file" name="prod_picture" id="pictureinput"><BR>
+                    <input class="btn btn-success" type="submit" value="Submit">
                 </div>
-
             </form>
         </div>
     </div>

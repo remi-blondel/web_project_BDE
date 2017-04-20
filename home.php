@@ -93,7 +93,16 @@ $homeData = new homeData();
                                         </p>
                                     </div>
                                     <div class="col-xs-4 col-lg-4">
-                                        <a href="" type="button" class="btn btn-primary"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Subscribe</a>
+                                        <?php if(!$homeData->checkIfUserHasAlreadySubscribed($_SESSION['user_id'], $activity)): { ?>
+                                            <a href="phpScripts/activitySubscribe.php?user_id=<?= $_SESSION['user_id'] ?>&id_activity=<?= $activity->pk_id_activity; ?>"
+                                               type="button" class="btn btn-success">
+                                                <i class="fa fa-plus-square" aria-hidden="true"></i> Subscribe</a>
+                                        <?php } elseif($homeData->checkIfUserHasAlreadySubscribed($_SESSION['user_id'], $activity)):{?>
+                                            <a href="phpScripts/activityUnSubscribe.php?user_id=<?= $_SESSION['user_id'] ?>&id_activity=<?= $activity->pk_id_activity; ?>"
+                                               type="button" class="btn btn-danger">
+                                                <i class="fa fa-minus-square" aria-hidden="true"></i> UnSubscribe</a>
+                                        <?php }endif; ?>
+                                            <span class="badge btn-responsive up_votes"><?= $homeData->countUserNbrByActivityId($activity) ?></span>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -104,7 +113,7 @@ $homeData = new homeData();
                             </div>
                         </div>
                     </div>
-                <?php endforeach?>
+                <?php endforeach ?>
             </div>
         </div>
 
@@ -140,16 +149,37 @@ $homeData = new homeData();
                                 <BR>
                                 <div class="row">
                                     <div class="col-xs-4 col-lg-4">
-                                        <?=$suggestion->datetime1?><a href="phpScripts/upVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=1"
-                                                                      class="btn btn-default btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up"></span></a><span class="badge btn-responsive up_votes"><?=$homeData->getDateTime1BySuggestion($suggestion)?></span>
+                                        <?=$suggestion->datetime1?>
+                                        <?php if(!$homeData->checkIfUserHasAlreadyLiked($_SESSION['user_id'], $suggestion, 1)): { ?>
+                                        <a href="phpScripts/suggestionUpVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=1"
+                                           class="btn btn-default btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up">
+                                        <?php } elseif($homeData->checkIfUserHasAlreadyLiked($_SESSION['user_id'], $suggestion, 1)): { ?>
+                                        <a href="phpScripts/suggestionCancelVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=1"
+                                           class="btn btn-success btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up">
+                                        <?php }endif; ?>
+                                            </span></a><span class="badge btn-responsive up_votes"><?=$homeData->getDateTime1BySuggestion($suggestion)?></span>
                                     </div>
                                     <div class="col-xs-4 col-lg-4">
-                                        <?=$suggestion->datetime2?><a href="phpScripts/upVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=2"
-                                                                      class="btn btn-default btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up"></span></a><span class="badge btn-responsive up_votes"><?=$homeData->getDateTime2BySuggestion($suggestion)?></span>
+                                        <?=$suggestion->datetime2?>
+                                        <?php if(!$homeData->checkIfUserHasAlreadyLiked($_SESSION['user_id'], $suggestion, 2)): { ?>
+                                        <a href="phpScripts/suggestionUpVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=2"
+                                           class="btn btn-default btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up">
+                                        <?php } elseif($homeData->checkIfUserHasAlreadyLiked($_SESSION['user_id'], $suggestion, 2)): { ?>
+                                        <a href="phpScripts/suggestionCancelVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=2"
+                                           class="btn btn-success btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up">
+                                        <?php }endif; ?>
+                                            </span></a><span class="badge btn-responsive up_votes"><?=$homeData->getDateTime2BySuggestion($suggestion)?></span>
                                     </div>
                                     <div class="col-xs-4 col-lg-4">
-                                        <?=$suggestion->datetime3?><a href="phpScripts/upVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=3"
-                                                                      class="btn btn-default btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up"></span></a><span class="badge btn-responsive up_votes"><?=$homeData->getDateTime3BySuggestion($suggestion)?></span>
+                                        <?=$suggestion->datetime3?>
+                                        <?php if(!$homeData->checkIfUserHasAlreadyLiked($_SESSION['user_id'], $suggestion, 3)): { ?>
+                                        <a href="phpScripts/suggestionUpVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=3"
+                                           class="btn btn-default btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up">
+                                        <?php } elseif($homeData->checkIfUserHasAlreadyLiked($_SESSION['user_id'], $suggestion, 3)): { ?>
+                                        <a href="phpScripts/suggestionCancelVote.php?user_id=<?= $_SESSION['user_id']?>&id_suggestion=<?= $suggestion->pk_id_suggestion?>&dateTimeNbr=3"
+                                           class="btn btn-success btn-responsive up_button"><span class="glyphicon glyphicon-thumbs-up">
+                                        <?php }endif; ?>
+                                            </span></a><span class="badge btn-responsive up_votes"><?=$homeData->getDateTime3BySuggestion($suggestion)?></span>
                                     </div>
                                 </div>
                             </div>

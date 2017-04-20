@@ -4,8 +4,8 @@
 <link rel="stylesheet" type="text/css" href="../style.css">
 
 <?php
-require_once '../database/db_config.php';
-require_once '../database/database.php';
+require_once '../database/singleton.php';
+require_once '../database/config.php';
 
 if(!empty($_POST) || !empty($_GET)){
     if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
@@ -26,8 +26,8 @@ function editUser()
 {
     try
     {
-        $stmt = database::getInstance()->prepare(<<<SQL
-        UPDATE User
+        $stmt = singleton::getInstance()->prepare(<<<SQL
+        UPDATE user
         SET role = :role
         WHERE pk_id_user = :id
 SQL
@@ -50,9 +50,9 @@ function deleteRole()
 {
     try
     {
-        $stmt = database::getInstance()->prepare(<<<SQL
-        UPDATE User
-        SET role = NULL
+        $stmt = singleton::getInstance()->prepare(<<<SQL
+        UPDATE user
+        SET role = 'none'
         WHERE pk_id_user = :id
 SQL
         );

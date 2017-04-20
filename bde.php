@@ -45,7 +45,7 @@ $bdeData = new bdeData();
                         <td><?= $new->title?></td>
                         <td><img src="pictures/<?= $new->img_path?>" class="img-thumbnail img-responsive img-center auto-resize" alt="icon"></td>
                         <td><?=$new->content;?></td>
-                        <td><a class='btn btn-default glyphicon glyphicon-edit' role='button' href="editNews.php"></a></td>
+                        <td><a class='btn btn-default glyphicon glyphicon-edit' role='button' href="management/editNews.php"></a></td>
                         <td><a class='btn btn-default glyphicon glyphicon-remove' role='button' href='#'></a></td>
                     </tr>
                 <?php endforeach?>
@@ -77,8 +77,10 @@ $bdeData = new bdeData();
                     <td><?=$suggestion->place?></td>
                     <td><?=$bdeData->getMainDateTimeVoteNbrSuggestion($suggestion)?></td>
                     <td><button type="button" class="btn btn-warning disabled"><i class="fa fa-spinner" aria-hidden="true"></i></i> Pending</button></td>
-                    <td><button id="btnformactivity" class="btn btn-success text-center"><i class="fa fa-check" aria-hidden="true"></i> Approve</button></td>
-                    <td><button type="button" class="btn btn-danger text-center"><i class="fa fa-minus-circle" aria-hidden="true"></i></i> Dismiss</button></td>
+                    <td>
+                        <a href="phpScripts/approveSuggestion.php?suggestion_id=<?= $suggestion->pk_id_suggestion?>&suggestion_name=<?= $suggestion->name?>&suggestion_place=<?= $suggestion->place?>&suggestion_content=<?= $suggestion->content?>&suggestion_mainDateTime=<?= $bdeData->getMainDateTimeSuggestion($suggestion)?>" id="btnformactivity" class="btn btn-success text-center"><i class="fa fa-check" aria-hidden="true"></i> Approve</a>
+                    </td>
+                    <td><a href="phpScripts/dismissSuggestion.php?suggestion_id=<?= $suggestion->pk_id_suggestion?>" type="button" class="btn btn-danger text-center"><i class="fa fa-minus-circle" aria-hidden="true"></i></i> Dismiss</a></td>
                 </tr>
                 <?php endforeach?>
             </table>

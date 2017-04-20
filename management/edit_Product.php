@@ -17,6 +17,10 @@
 
 <body>
 
+<header>
+    <?php include_once("../navbar.php") ?>
+</header>
+
 <div id="allcontent">
     <div class="container-fluid containerlevel1">
         <div class="row">
@@ -48,8 +52,8 @@
                     <label for="pictureinput">Select a Picture for your product</label>
                     <input type="file" id="pictureinput" name="imgToUpload"><BR>
 
-                    <input type="hidden" name="id_prod" value='<?= $id_product; ?>/'>
-                    <input type="hidden" name="action" value="editprod"/>
+                    <input type="hidden" name="id_prod" value='<?= $id_product; ?>'>
+                    <input type="hidden" name="action" value="editprod">
 
                     <button class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
                 </div>

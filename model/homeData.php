@@ -59,6 +59,30 @@ class homeData
         return $this->suggestions;
     }
 
+    public function checkIfUserHasAlreadyLiked($user, $suggestion, $dateTimeNbr)
+    {
+        $checkIfUserHasAlreadyLikedQuery = singleton::getInstance()->prepare("SELECT choice_datetime$dateTimeNbr FROM user_vote WHERE pk_id_user = $user AND pk_id_suggestion = $suggestion->pk_id_suggestion");
+        $checkIfUserHasAlreadyLikedQuery->execute();
+        $result = $checkIfUserHasAlreadyLikedQuery->fetch();
+        return isset($result[0]);
+    }
+
+    public function checkIfUserHasAlreadySubscribed($user, $activity)
+    {
+        $checkIfUserHasAlreadySubscribedQuery = singleton::getInstance()->prepare("SELECT pk_id_activity FROM user_subscribe WHERE pk_id_user = $user AND pk_id_activity = $activity->pk_id_activity");
+        $checkIfUserHasAlreadySubscribedQuery->execute();
+        $result = $checkIfUserHasAlreadySubscribedQuery->fetch();
+        return isset($result[0]);
+    }
+
+    public function countUserNbrByActivityId($activity)
+    {
+        $nbr_user_subscribed_Query = singleton::getInstance()->prepare("SELECT COUNT(pk_id_user) FROM user_subscribe WHERE pk_id_activity = $activity->pk_id_activity");
+        $nbr_user_subscribed_Query->execute();
+        $result = $nbr_user_subscribed_Query->fetch();
+        return $result[0];
+    }
+
     public function getDateTime1BySuggestion($suggestion)
     {
         $nbr_vote_datetime1Query = singleton::getInstance()->prepare("SELECT COUNT(choice_datetime1) FROM user_vote WHERE pk_id_suggestion = $suggestion->pk_id_suggestion");

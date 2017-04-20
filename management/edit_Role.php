@@ -17,6 +17,10 @@
 
 <body>
 
+<header>
+    <?php include_once("../navbar.php") ?>
+</header>
+
 <div id="allcontent">
     <div class="container-fluid containerlevel1">
         <div class="row">

@@ -1,6 +1,9 @@
 <?php
-$_SESSION['role'] = "bde";
-$_SESSION['user_id'] = 1;
+    define( 'ROOT_DIR', 'http://localhost/web_project_bde/');
+    if(!isset($_SESSION['user_id']))
+    {
+        header('location:' . ROOT_DIR . 'authentication/Login.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,47 +28,47 @@ $_SESSION['user_id'] = 1;
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="navbar-brand" href="#"><a href="home.php"><img class="paddingb10 img-responsive" src="pictures/exia.png"></a></div>
+            <div class="navbar-brand" href="#"><a href="<?= ROOT_DIR?>home.php"><img class="paddingb10 img-responsive" src="<?= ROOT_DIR?>pictures/exia.png"></a></div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="home.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-home" aria-hidden="true"></i> Home</span><span class="caret"></span></a>
+                    <a href="<?= ROOT_DIR?>home.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-home" aria-hidden="true"></i> Home</span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="home.php#news">News</a></li>
-                        <li><a href="home.php#events">Latest Events</a></li>
-                        <li><a href="home.php#activities">Activities</a></li>
-                        <li><a href="home.php#suggestions">Suggestions</a></li>
-                        <li><a href="home.php#store">Store</a></li>
+                        <li><a href="<?= ROOT_DIR?>home.php#news">News</a></li>
+                        <li><a href="<?= ROOT_DIR?>home.php#events">Latest Events</a></li>
+                        <li><a href="<?= ROOT_DIR?>home.php#activities">Activities</a></li>
+                        <li><a href="<?= ROOT_DIR?>home.php#suggestions">Suggestions</a></li>
+                        <li><a href="<?= ROOT_DIR?>home.php#store">Store</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="home.php#contact">Contact</a></li>
+                        <li><a href="<?= ROOT_DIR?>home.php#contact">Contact</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="activities.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-futbol-o" aria-hidden="true"></i> Events</span><span class="caret"></span></a>
+                    <a href="<?= ROOT_DIR?>activities.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-futbol-o" aria-hidden="true"></i> Events</span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="activities.php#events">Latest Events</a></li>
-                        <li><a href="activities.php#upload">Upload Pictures</a></li>
+                        <li><a href="<?= ROOT_DIR?>activities.php#events">Latest Events</a></li>
+                        <li><a href="<?= ROOT_DIR?>activities.php#upload">Upload Pictures</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="shop.php"><span><i class="fa fa-shopping-basket" aria-hidden="true"></i> Store</span></a>
+                    <a href="<?= ROOT_DIR?>shop.php"><span><i class="fa fa-shopping-basket" aria-hidden="true"></i> Store</span></a>
                 </li>
                 <?php if(isset($_SESSION['role']) AND !empty($_SESSION['role']) AND $_SESSION['role'] == 'staff') { ?>
                 <li>
-                    <a href="staff.php"><span><i class="fa fa-cog" aria-hidden="true"></i> STAFF Management</span></a>
+                    <a href="<?= ROOT_DIR?>staff.php"><span><i class="fa fa-cog" aria-hidden="true"></i> STAFF Management</span></a>
                 </li>
                 <?php } elseif(isset($_SESSION['role']) AND !empty($_SESSION['role']) AND $_SESSION['role'] == 'bde') { ?>
                 <li>
-                    <a href="bde.php"><span><i class="fa fa-cog" aria-hidden="true"></i> BDE Management</span></a>
+                    <a href="<?= ROOT_DIR?>bde.php"><span><i class="fa fa-cog" aria-hidden="true"></i> BDE Management</span></a>
                 </li>
                 <?php } ?>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#"><span><i class="fa fa-power-off" aria-hidden="true"></i> Log out</span></a>
+                    <a href="phpScripts/logOut.php"><span><i class="fa fa-power-off" aria-hidden="true"></i> Log out</span></a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->

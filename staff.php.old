@@ -38,8 +38,8 @@ function getAllPictures()
          * Requête SQL pour retrive toutes les images du site en base
          */
         $stmt = singleton::getInstance()->prepare(<<<SQL
-            SELECT *
-            FROM picture
+            SELECT path
+            FROM Picture
 SQL
         );
 
@@ -59,9 +59,9 @@ HTML;
         {
             $allpictures .= "<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\" >";
             $allpictures .= "<div class=\"thumbnail text-center\">";
-            $allpictures .= "<img src =\"pictures/{$pictures['path']}\" class=\"img-responsive img-center auto-resize\" alt = \"icon\">";
+            $allpictures .= "<img src = pictures\"{$pictures['path']}\" class=\"img-responsive img-center auto-resize\" alt = \"icon\">";
             $allpictures .= "<a class='btn btn-primary text-center' role='button' href=management/manage_pictures.php?action=dlpics><i class='fa fa-cloud-download' aria-hidden = 'true' ></i ></a>";
-            $allpictures .= "<a class='btn btn-danger' role='button' href='management/manage_pictures.php?action=rmpics&img_id=$pictures[0]'><i class='fa fa-trash' aria-hidden = 'true' ></i ></a>";
+            $allpictures .= "<a class='btn btn-danger' role='button' href=management/manage_pictures.php><i class='fa fa-trash' aria-hidden = 'true' ></i ></a>";
             $allpictures .= "</div>";
             $allpictures .= "</div>";
         }
@@ -94,7 +94,7 @@ function viewShop()
          */
          $stmt = singleton::getInstance()->prepare(<<<SQL
          SELECT pk_id_product, name, price, cat, img_path
-         FROM product
+         FROM Product
 SQL
          );
 
@@ -121,7 +121,7 @@ HTML;
          {
              $store_tab .= "<tr>";
              $store_tab .= "<td>{$shop['name']}</td>";
-             $store_tab .= "<td><img src=\"pictures/{$shop['img_path']}\" class=\"img-responsive img-thumbnail\"></td>";
+             $store_tab .= "<td>{$shop['img_path']}</td>";
              $store_tab .= "<td>{$shop['cat']}</td>";
              $store_tab .= "<td>{$shop['price']}€</td>";
              $store_tab .= "<td><a class='btn btn-primary glyphicon glyphicon-edit' role='button' href=management/edit_Product.php?id={$shop['pk_id_product']}></a></td>";
@@ -150,10 +150,10 @@ function viewOrders()
     try
     {
         $stmt = singleton::getInstance()->prepare(<<<SQL
-        SELECT * FROM user 
-        INNER JOIN user_buy ON user_buy.pk_id_user = user.pk_id_user
-        INNER JOIN product ON product.pk_id_product = user_buy.pk_id_product
-        ORDER BY lastname 
+        SELECT * FROM User 
+        INNER JOIN User_Buy ON User_Buy.id_user = User.pk_id_user
+        INNER JOIN Product ON Product.pk_id_product = User_Buy.id_product
+        WHERE paid = 'NO';
 SQL
         );
 
@@ -192,7 +192,7 @@ HTML;
             {
                 $orders_tab .= "<td>YES</td>";
             }
-            $orders_tab .= "<td><a class='btn btn-danger glyphicon glyphicon-remove' role='button' href=management/manage_orders.php?action=delorder&idprod={$order['pk_id_product']}&iduser={$order['pk_id_user']}></a></td>";
+            $orders_tab .= "<td><a class='btn btn-danger glyphicon glyphicon-remove' role='button' href=management/manage_orders.php?action=delorder&idprod={$order['id_product']}&iduser={$order['id_user']}></a></td>";
             $orders_tab .= "</tr>";
         }
 
@@ -222,7 +222,7 @@ function viewRoles()
     */
     $stmt = singleton::getInstance()->prepare(<<<SQL
     SELECT pk_id_user, firstname, lastname, role
-    FROM user
+    FROM User
 SQL
     );
 

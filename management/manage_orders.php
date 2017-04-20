@@ -1,6 +1,6 @@
 <?php
-require_once '../database/db_config.php';
-require_once '../database/database.php';
+require_once '../database/singleton.php';
+require_once '../database/config.php';
 
 if(!empty($_POST) || !empty($_GET))
 {
@@ -20,9 +20,9 @@ function deleteOrder()
 {
     try
     {
-        $stmt = database::getInstance()->prepare(<<<SQL
-        DELETE FROM User_Buy
-        WHERE id_product = :id_prod AND id_user = :id_user
+        $stmt = singleton::getInstance()->prepare(<<<SQL
+        DELETE FROM user_buy
+        WHERE pk_id_product = :id_prod AND pk_id_user = :id_user
 SQL
         );
 

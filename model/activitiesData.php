@@ -19,6 +19,14 @@ class activitiesData
         $this->activityPictures = $activitiesPicturesQuery->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function checkIfUserHasAlreadyLiked($user, $activityPicture)
+    {
+        $checkIfUserHasAlreadyLikedQuery = singleton::getInstance()->prepare("SELECT pk_id_user FROM user_like WHERE pk_id_picture = $activityPicture->pk_id_picture AND pk_id_user = $user");
+        $checkIfUserHasAlreadyLikedQuery->execute();
+        $result = $checkIfUserHasAlreadyLikedQuery->fetch();
+        return isset($result[0]);
+    }
+
     public function getActivities()
     {
         return $this->activities;

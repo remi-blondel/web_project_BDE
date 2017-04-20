@@ -4,8 +4,8 @@
 <link rel="stylesheet" type="text/css" href="../style.css">
 
 <?php
-require_once '../database/db_config.php';
-require_once '../database/database.php';
+require_once '../database/singleton.php';
+require_once '../database/config.php';
 
 if(!empty($_POST) || !empty($_GET))
 {
@@ -37,7 +37,7 @@ function editProduct()
         }
         else
         {
-                $stmt = database::getInstance()->prepare("UPDATE Product SET name = :new_name, price = :new_price, cat = :new_cat WHERE pk_id_product = :id_product");
+                $stmt = singleton::getInstance()->prepare("UPDATE product SET name = :new_name, price = :new_price, cat = :new_cat WHERE pk_id_product = :id_product");
 
                 /**
                  * Attribution des valeurs dynamiquement
@@ -64,15 +64,15 @@ function deleteProduct()
 {
     try
     {
-        $stmt = database::getInstance()->prepare(<<<SQL
+        $stmt = singleton::getInstance()->prepare(<<<SQL
         SET AUTOCOMMIT = 0;
         
         START TRANSACTION;
         
-        DELETE FROM User_Buy
-        WHERE id_product = :id_prod;
+        DELETE FROM user_buy
+        WHERE pk_id_product = :id_prod;
         
-        DELETE FROM Product
+        DELETE FROM product
         WHERE pk_id_product = :id_prod;
 
         COMMIT; 
@@ -99,10 +99,12 @@ SQL
 
 function addProduct()
 {
+    var_dump($_FILES['prod_picture']);
+
     try
     {
-        $stmt = database::getInstance()->prepare(<<<SQL
-        INSERT INTO Product (name, price, cat, img_path)
+        $stmt = singleton::getInstance()->prepare(<<<SQL
+        INSERT INTO product (name, price, cat, img_path)
         VALUES (:new_name, :new_price, :new_cat, :new_img)
 SQL
         );
@@ -113,18 +115,29 @@ SQL
         $stmt->bindValue(':new_name',           $_POST['prod_name'],      PDO::PARAM_STR);
         $stmt->bindValue(':new_price',          $_POST['prod_price'],     PDO::PARAM_INT);
         $stmt->bindValue(':new_cat',            $_POST['prod_cat'],       PDO::PARAM_STR);
-        $stmt->bindValue(':new_img',            $_POST['prod_name'],      PDO::PARAM_STR);
 
+        if(isset($_FILES['prod_picture']))
+        {
+            $fileInfo = pathinfo($_FILES['prod_picture']['name']);
+            $extension_upload = $fileInfo['extension'];
+            $allowed = array('jpg', 'jpeg', 'png', 'gif');
 
-        $stmt->execute();
-
+            if (in_array($extension_upload, $allowed))
+            {
+                $picture_new_name = uniqid('', true) . '.' . $extension_upload;
+                move_uploaded_file($_FILES['prod_picture']['tmp_name'], '../pictures/' . $picture_new_name);
+                $stmt->bindValue(':new_img',            $picture_new_name,      PDO::PARAM_STR);
+                $stmt->execute();
+            }
+        }
         /**
          * Retour à la page admin
          */
-        header('location:../staff.php');
+        //header('location:../staff.php');
     }
     catch (PDOException $e)
     {
         printf("Erreur %d : %s\n", $e->getCode(), $e->getMessage());
     }
 }
+
